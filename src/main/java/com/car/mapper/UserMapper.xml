@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.car.mapper.UserMapper">
+  <insert id="add" parameterType="User" >
+	        insert into user (userid,password,email,phone,area,identity,imgPath) values (#{userid},#{password},#{email},#{phone},#{area},#{identity},#{imgPath})
+	    </insert>
+
+  <delete id="delete" parameterType="User" >
+	        delete from user where userid= #{userid}
+	    </delete>
+
+  <select id="getByUseid" parameterType="string" resultType="User">
+	        select * from user where userid= #{userid}
+	    </select>
+	<select id="getByUseridAndPassword" parameterType="map" resultType="User">
+		select * from user where userid=#{userid} and password=#{password}
+	</select>
+
+  <update id="update" parameterType="User" >
+	        update user set name=#{name} where userid=#{userid}
+	    </update>
+  <select id="list" resultType="User">
+	        select * from user
+	    </select>
+</mapper>
+
