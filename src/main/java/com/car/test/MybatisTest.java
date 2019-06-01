@@ -28,7 +28,7 @@ public class MybatisTest {
     @Test
     public void testUserAdd() {
         User user = new User();
-        user.setUserid("lzkmnd222");
+        user.setUserid("lzkmnd22FAFASFSA2");
         user.setPassword("123456");
         user.setEmail("111@qq.com");
         user.setArea("上海");

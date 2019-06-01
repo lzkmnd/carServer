@@ -111,6 +111,7 @@ public class CarController {
 		if (loginUser!=null){
 			result.put("result","true");
 			result.put("user",JSONObject.toJSON(loginUser));
+			result.put("img",imgUtils.GetImageStr(loginUser.getImgPath()) );
 		}else {
 			result.put("result","false");
 		}
@@ -135,8 +136,10 @@ public class CarController {
 	public String Regist(@RequestBody String str) {
 		JSONObject js = JSONObject.parseObject(str);
 		User user = JSON.toJavaObject(js,User.class);
-		String imgPath = "F:\\JavaTest\\carServer\\img"+user.getUserid()+"img";
-		imgUtils.GenerateImage(user.getImgPath(),imgPath);
+		String imgPath = "F:\\JavaTest\\carServer\\img\\"+user.getUserid()+".jpg";
+		String img = user.getImgPath();
+		imgUtils.GenerateImage(img,imgPath);
+		user.setImgPath(imgPath);
 		String result = userService.add(user);
 		JSONObject json= new JSONObject();
 		json.put("result", result);
