@@ -19,6 +19,10 @@
 		select * from user where userid=#{userid} and password=#{password}
 	</select>
 
+	<select id="getIdentify" parameterType="String" resultType="string">
+		select identity from user where userid=#{userid}
+	</select>
+
   <update id="update" parameterType="User" >
 	        update user set name=#{name} where userid=#{userid}
 	    </update>

@@ -6,7 +6,10 @@ import java.util.Map;
 
 //import com.car.mapper.UserMapper;
 //import com.car.pojo.User;
+import com.car.mapper.CarMapper;
 import com.car.mapper.UserMapper;
+import com.car.pojo.Car;
+import com.car.pojo.CarExample;
 import com.car.pojo.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,17 +28,21 @@ public class MybatisTest {
     private CategoryMapper categoryMapper;
     @Autowired
     private UserMapper userMapper;
-    @Test
-    public void testUserAdd() {
-        User user = new User();
-        user.setUserid("lzkmnd22FAFASFSA2");
-        user.setPassword("123456");
-        user.setEmail("111@qq.com");
-        user.setArea("上海");
-        user.setIdentity("admin");
-        user.setPhone("1110");
-        userMapper.add(user);
-    }
+    @Autowired
+    private CarMapper carMapper;
+
+
+//    @Test
+//    public void testUserAdd() {
+//        User user = new User();
+//        user.setUserid("lzkmnd22FAFASFSA2");
+//        user.setPassword("123456");
+//        user.setEmail("111@qq.com");
+//        user.setArea("上海");
+//        user.setIdentity("admin");
+//        user.setPhone("1110");
+//        userMapper.add(user);
+//    }
     @Test
     public void testCategoryAdd() {
         Category category = new Category();
@@ -50,6 +57,11 @@ public class MybatisTest {
         for (Category c : cs) {
             System.out.println(c.getName());
         }
+    }
+    @Test
+    public void getIdentify() {
+        String S = userMapper.getIdentify("qqqq");
+        System.out.println(S);
     }
 
     @Test
@@ -67,5 +79,28 @@ public class MybatisTest {
         User user = userMapper.getByUseid("lzkmnd222");
         System.out.println(user);
     }
+
+    @Test
+    public void teesCar(){
+        System.out.println(carMapper);
+        Car car = carMapper.selectByPrimaryKey("1");
+        System.out.println(car.getName());
+//        List<Car> cs= mapper.selectByExample(example);
+//
+//        for (Car c : cs) {
+//            System.out.println(c.getName());
+//        }
+    }
+
+
+    @Test
+    public void ListCar(){
+        System.out.println(carMapper);
+        List<Car> cs= carMapper.list();
+        for (Car c : cs) {
+            System.out.println(c.getName());
+        }
+    }
+
 }
 

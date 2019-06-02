@@ -24,9 +24,10 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
-    
-    <mvc:default-servlet-handler />
 
+    <mvc:default-servlet-handler/>
+
+    <mvc:resources location="/carImg" mapping="/carImg/**/**"/>
 
     <bean
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">

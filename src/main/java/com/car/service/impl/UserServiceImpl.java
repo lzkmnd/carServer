@@ -22,6 +22,13 @@ public class UserServiceImpl  implements UserService {
     public List<User> list(){
         return userMapper.list();
     }
+
+    @Override
+    public String getIdentify(String userid) {
+        String identify = userMapper.getIdentify(userid);
+        return identify;
+    }
+
     public User getByUseid(String userid){
         return userMapper.getByUseid(userid);
     }

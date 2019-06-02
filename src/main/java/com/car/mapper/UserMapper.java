@@ -12,6 +12,7 @@ public interface UserMapper {
 
     public void delete(String userid);
 
+    public String getIdentify(String userid);
 
     public User getByUseid(String userid);
 
