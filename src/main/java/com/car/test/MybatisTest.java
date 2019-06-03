@@ -24,6 +24,8 @@ public class MybatisTest {
     @Autowired
     private  Control_configurationMapper control_configurationMapper ;
     @Autowired
+    private  Internal_configurationMapper internal_configurationMapper;
+    @Autowired
     private  External_configurationMapper external_configurationMapper ;
     @Autowired
     private  Glass_rearviewmirrorMapper glass_rearviewmirrorMapper ;
@@ -181,6 +183,11 @@ public class MybatisTest {
     public void  EngineSelectByPrimaryKey(){
         System.out.println(engineMapper);
         Engine cn= engineMapper.selectByPrimaryKey("25379");
+    }
+    @Test
+    public void  Internal_configurationSelectByPrimaryKey(){
+        System.out.println(internal_configurationMapper);
+        Internal_configuration cn= internal_configurationMapper.selectByPrimaryKey("25379");
     }
 
 
