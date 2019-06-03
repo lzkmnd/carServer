@@ -6,24 +6,39 @@ import java.util.Map;
 
 //import com.car.mapper.UserMapper;
 //import com.car.pojo.User;
-import com.car.mapper.CarMapper;
-import com.car.mapper.UserMapper;
-import com.car.pojo.Car;
-import com.car.pojo.CarExample;
-import com.car.pojo.User;
+import com.car.mapper.*;
+import com.car.pojo.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.car.mapper.CategoryMapper;
-import com.car.pojo.Category;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
 public class MybatisTest {
-
+    @Autowired
+    private  Ac_refrigeratorMapper ac_refrigeratorMapper ;
+    @Autowired
+    private  Chassis_steeringMapper chassis_steeringMapper ;
+    @Autowired
+    private  Control_configurationMapper control_configurationMapper ;
+    @Autowired
+    private  External_configurationMapper external_configurationMapper ;
+    @Autowired
+    private  Glass_rearviewmirrorMapper glass_rearviewmirrorMapper ;
+    @Autowired
+    private  High_tech_configurationMapper high_tech_configurationMapper ;
+    @Autowired
+    private  Light_configurationMapper light_configurationMapper ;
+    @Autowired
+    private  Media_configurationMapper media_configurationMapper ;
+    @Autowired
+    private  EngineMapper engineMapper ;
+    @Autowired
+    private  BodyMapper bodyMapper;
+    @Autowired
+    private CarnumMapper carnumMapper;
     @Autowired
     private CategoryMapper categoryMapper;
     @Autowired
@@ -101,6 +116,73 @@ public class MybatisTest {
             System.out.println(c.getName());
         }
     }
+
+    @Test
+    public void CarnumselectByPrimaryKey(){
+        System.out.println(carnumMapper);
+        Carnum cn= carnumMapper.selectByPrimaryKey(1);
+        System.out.println(cn.getNum1());
+        System.out.println(cn.getNum2());
+
+    }
+
+    @Test
+    public void  BodySelectByPrimaryKey(){
+        System.out.println(bodyMapper);
+        Body cn= bodyMapper.selectByPrimaryKey("25379");
+        System.out.println(cn.getBodystructure());
+        // ac_refrigerator cn2= Ac_refrigeratorMapper.selectByPrimaryKey(carnumMapper.selectByPrimaryKey(1).getNum2());
+        // System.out.println(cn.toString());
+    }
+    @Test
+    public void  Ac_refrigeratorSelectByPrimaryKey(){
+        System.out.println(ac_refrigeratorMapper);
+        Ac_refrigerator cn= ac_refrigeratorMapper.selectByPrimaryKey("25379");
+        System.out.println(cn.getAirconditioningcontrolmode());
+        // ac_refrigerator cn2= Ac_refrigeratorMapper.selectByPrimaryKey(carnumMapper.selectByPrimaryKey(1).getNum2());
+        // System.out.println(cn.toString());
+    }
+    @Test
+    public void  Chassis_steeringSelectByPrimaryKey(){
+        System.out.println(chassis_steeringMapper);
+        Chassis_steering cn= chassis_steeringMapper.selectByPrimaryKey("25379");
+    }
+    @Test
+    public void  control_configurationSelectByPrimaryKey(){
+        System.out.println(control_configurationMapper);
+        Control_configuration cn= control_configurationMapper.selectByPrimaryKey("25379");
+    }
+    @Test
+    public void  external_configurationSelectByPrimaryKey(){
+        System.out.println(external_configurationMapper);
+        External_configuration cn= external_configurationMapper.selectByPrimaryKey("25379");
+    }
+    @Test
+    public void  glass_rearviewmirrorSelectByPrimaryKey(){
+        System.out.println(glass_rearviewmirrorMapper);
+        Glass_rearviewmirror cn= glass_rearviewmirrorMapper.selectByPrimaryKey("25379");
+    }
+    @Test
+    public void  high_tech_configurationSelectByPrimaryKey(){
+        System.out.println(high_tech_configurationMapper);
+        High_tech_configuration cn= high_tech_configurationMapper.selectByPrimaryKey("25379");
+    }
+    @Test
+    public void  Light_configurationMapperSelectByPrimaryKey(){
+        System.out.println(light_configurationMapper);
+        Light_configuration cn= light_configurationMapper.selectByPrimaryKey("25379");
+    }
+    @Test
+    public void  Media_configurationSelectByPrimaryKey(){
+        System.out.println(media_configurationMapper);
+        Media_configuration cn= media_configurationMapper.selectByPrimaryKey("25379");
+    }
+    @Test
+    public void  EngineSelectByPrimaryKey(){
+        System.out.println(engineMapper);
+        Engine cn= engineMapper.selectByPrimaryKey("25379");
+    }
+
 
 }
 
