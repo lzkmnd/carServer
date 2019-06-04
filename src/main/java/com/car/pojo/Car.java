@@ -1,8 +1,17 @@
 package com.car.pojo;
 
 public class Car {
-
+    private String brandPurl;
     private String carid;
+
+    public String getBrandPurl() {
+        return brandPurl;
+    }
+
+    public void setBrandPurl(String brandPurl) {
+        this.brandPurl = brandPurl;
+    }
+
     private String brand;
     private String name;
     private String type;

@@ -1,11 +1,5 @@
 package com.car.test;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-//import com.car.mapper.UserMapper;
-//import com.car.pojo.User;
 import com.car.mapper.*;
 import com.car.pojo.*;
 import org.junit.Test;
@@ -13,6 +7,13 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+//import com.car.mapper.UserMapper;
+//import com.car.pojo.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
@@ -48,6 +49,19 @@ public class MybatisTest {
     @Autowired
     private CarMapper carMapper;
 
+    //最后一天
+    @Autowired
+    private Basic_parameterMapper basic_parameter;
+    @Autowired
+    private BrandMapper brand;
+    @Autowired
+    private Safety_equipmentMapper safety_equipment;
+    @Autowired
+    private Seat_configurationMapper seat_configuration;
+    @Autowired
+    private TransmissionMapper transmission;
+    @Autowired
+    private Wheel_brakeMapper wheel_brake;
 
 //    @Test
 //    public void testUserAdd() {
@@ -185,11 +199,33 @@ public class MybatisTest {
         Engine cn= engineMapper.selectByPrimaryKey("25379");
     }
     @Test
-    public void  Internal_configurationSelectByPrimaryKey(){
-        System.out.println(internal_configurationMapper);
-        Internal_configuration cn= internal_configurationMapper.selectByPrimaryKey("25379");
+    public void  Basic_parameter(){
+        System.out.println(basic_parameter);
+        Basic_parameter cn= basic_parameter.selectByPrimaryKey("25379");
     }
-
-
+    @Test
+    public void  Brand(){
+        System.out.println(brand);
+        Brand cn= brand.selectByPrimaryKey("25379");
+    }
+    @Test
+    public void  Safety_equipment(){
+        System.out.println(safety_equipment);
+        Safety_equipment cn= safety_equipment.selectByPrimaryKey("25379");
+    }
+    @Test
+    public void  Seat_configuration(){
+        System.out.println(seat_configuration);
+        Seat_configuration cn= seat_configuration.selectByPrimaryKey("25379");
+    }
+    @Test
+    public void  Transmission(){
+        System.out.println(transmission);
+        Transmission cn= transmission.selectByPrimaryKey("25379");
+    }@Test
+    public void  Wheel_brake(){
+        System.out.println(wheel_brake);
+        Wheel_brake cn= wheel_brake.selectByPrimaryKey("25379");
+    }
 }
 

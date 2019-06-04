@@ -33,23 +33,30 @@
         </javaClientGenerator>
         <!--生成对应表及类名-->
 
-        <table tableName="engine" domainObjectName="Engine" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <table tableName="basic_parameter" domainObjectName="Basic_parameter" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-        <table tableName="glass_rearviewmirror" domainObjectName="Glass_rearviewmirror" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <table tableName="safety_equipment" domainObjectName="Safety_equipment" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-        <table tableName="high_tech_configuration" domainObjectName="High_tech_configuration" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <table tableName="seat_configuration" domainObjectName="Seat_configuration" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-        <table tableName="media_configuration" domainObjectName="Media_configuration" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <table tableName="transmission" domainObjectName="Transmission" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
             <property name="my.isgen.usekeys" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-
+        <table tableName="wheel_brake" domainObjectName="Wheel_brake" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <property name="my.isgen.usekeys" value="true"/>
+        <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="brand" domainObjectName="Brand" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+            <property name="my.isgen.usekeys" value="true"/>
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
 
 
 

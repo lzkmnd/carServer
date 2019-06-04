@@ -19,4 +19,14 @@ public interface CarService {
     Internal_configuration getInternal_configuration(String Num);
     Light_configuration getLight_configuration(String Num);
     Media_configuration getMedia_configuration(String Num);
+    Basic_parameter getBasic_parameter(String Num);
+    Brand getBrand(String Num);
+
+    Safety_equipment getSafety_equipment(String Num);
+
+    Seat_configuration getSeat_configuration(String Num);
+
+    Transmission getTransmission(String Num);
+
+    Wheel_brake getWheel_brake(String Num);
 }

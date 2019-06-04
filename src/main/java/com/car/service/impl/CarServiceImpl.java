@@ -40,6 +40,18 @@ public class CarServiceImpl implements CarService {
     UserMapper userMapper;
     @Autowired
     CarMapper carMapper;
+    @Autowired
+    Basic_parameterMapper basic_parameter;
+    @Autowired
+    BrandMapper brand;
+    @Autowired
+    Safety_equipmentMapper safety_equipment;
+    @Autowired
+    Seat_configurationMapper seat_configuration;
+    @Autowired
+    TransmissionMapper transmission;
+    @Autowired
+    Wheel_brakeMapper wheel_brake;
     
 
     @Override
@@ -110,5 +122,35 @@ public class CarServiceImpl implements CarService {
     @Override
     public Media_configuration getMedia_configuration(String Num) {
         return media_configurationMapper.selectByPrimaryKey(Num);
+    }
+
+    @Override
+    public Basic_parameter getBasic_parameter(String Num) {
+        return basic_parameter.selectByPrimaryKey(Num);
+    }
+
+    @Override
+    public Brand getBrand(String Num) {
+        return brand.selectByPrimaryKey(Num);
+    }
+
+    @Override
+    public Safety_equipment getSafety_equipment(String Num) {
+        return safety_equipment.selectByPrimaryKey(Num);
+    }
+
+    @Override
+    public Seat_configuration getSeat_configuration(String Num) {
+        return seat_configuration.selectByPrimaryKey(Num);
+    }
+
+    @Override
+    public Transmission getTransmission(String Num) {
+        return transmission.selectByPrimaryKey(Num);
+    }
+
+    @Override
+    public Wheel_brake getWheel_brake(String Num) {
+        return wheel_brake.selectByPrimaryKey(Num);
     }
 }
